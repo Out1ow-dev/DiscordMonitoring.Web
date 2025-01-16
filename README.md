@@ -42,3 +42,5 @@ TODO List:
 3) Fix the logic for updating information about servers.
 
 4) Add a service for email confirmation.
+
+5) Fix server filter.
