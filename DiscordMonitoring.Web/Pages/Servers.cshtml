@@ -1,0 +1,244 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.ServersModel
+@{
+}
+
+<head>
+   <link rel="stylesheet" href="~/css/maincss.css" asp-append-version="true" />
+</head>
+
+<div class="min-h-screen w-full flex-row-reverse" style="padding:35px;">
+    <main class="flex min-h-full w-full flex-grow flex-col items-center justify-center">
+        <article itemscope="itemscope" itemtype="http://schema.org/Article" class="relative flex w-full flex-col space-y-2">
+            <div class="content_wrapper flex items-center justify-between px-2 py-3 lg:px-5">
+                <div class="flex items-center truncate"><img src="@Model.Game.IconUrl" itemprop="image" alt="@Model.Game.GameName" title="@Model.Game.GameName" class="mr-1.5 size-10 rounded-md"> <div class="flex flex-col items-start -space-y-1"><b class="whitespace-pre-wrap text-center font-bold text-white lg:text-left lg:text-lg">@Model.Game.GameName</b> <nav aria-label="Breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList" class="flex w-full text-gray-500" data-v-7b4892c4=""><ol class="breadcrumb-list" data-v-7b4892c4=""><li itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem" class="breadcrumb-item" data-v-7b4892c4=""><a href="/" title="Главная" itemprop="item" class="text-xs hover:text-white nuxt-link-active" data-v-7b4892c4=""><span itemprop="name" data-v-7b4892c4="">Главная</span></a> <meta itemprop="position" content="1" data-v-7b4892c4=""></li><li itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem" class="breadcrumb-item" data-v-7b4892c4=""><a href="/Servers/?id=@Model.Game.Id" title="@Model.Game.GameName" itemprop="item" class="text-xs hover:text-white nuxt-link-active" data-v-7b4892c4=""><span itemprop="name" data-v-7b4892c4="">@Model.Game.GameName</span></a> <meta itemprop="position" content="2" data-v-7b4892c4=""></li></ol></nav></div></div> <div class="relative flex items-center justify-between">
+                    <button class="relative flex cursor-pointer items-center whitespace-nowrap text-xl uppercase text-white lg:hidden">Меню</button> <nav class="hidden lg:flex lg:flex-grow lg:items-center">
+
+                    </nav>
+                </div>
+            </div>
+            <div class="content_wrapper relative flex w-full min-w-0 flex-1 flex-col items-start justify-start space-y-1 lg:space-y-2 lg:px-5">
+                <div class="relative flex w-full min-w-0 flex-1 flex-col items-start justify-start lg:flex-row">
+                    <div class="tpl-block relative flex w-full flex-col space-y-4">
+                        <div class="flex min-w-0 flex-col space-y-4 lg:flex-row lg:items-start lg:justify-between lg:space-x-5 lg:space-y-0">
+                            <div class="flex min-w-0 flex-shrink flex-col">
+                                <h1 class="tpl-title !mb-0 break-all">Сервера @Model.Game.GameName</h1>
+                                <div class="flex flex-col text-sm text-gray-500 lg:flex-row lg:space-x-1.5">
+                                    <div class="flex space-x-1 whitespace-nowrap">
+                                        <span>Серверов:</span>
+                                        <span>@Model.Game.ServerCount</span>
+                                    </div>
+                                    <div class="hidden lg:flex">/</div>
+                                    <div class="flex space-x-1 whitespace-nowrap">
+                                        <span>Серверов онлайн:</span>
+                                        <span>@Model.Game.ServerCount</span>
+                                    </div>
+                                    <div class="hidden lg:flex">/</div>
+                                    <div class="flex space-x-1 whitespace-nowrap">
+                                        <span>Игроков онлайн:</span>
+                                        <span>@Model.Game.GeneralOnline</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/ServerControl/Create" class="btn-secondary mb-3 flex w-full flex-shrink-0 space-x-1 whitespace-nowrap lg:mb-0 lg:w-auto">
+                                <i class="uil uil-plus"></i>
+                                <span>Добавить сервер</span>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-wrap justify-between mb-4" >
+                            <div class="flex flex-col">
+                                <div class="mb-1 flex items-center space-x-3 text-base uppercase text-white"><b>Статус</b></div>
+                                <div class="flex select-none flex-wrap items-center">
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Онлайн</span>
+                                    </div>
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Недоступен</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="mb-1 flex items-center space-x-3 text-base uppercase text-white"><b>Заполненность игроками</b></div>
+                                <div class="flex select-none flex-wrap items-center">
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Пустой</span>
+                                    </div>
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Есть игроки</span>
+                                    </div>
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Полный</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="mb-1 flex items-center space-x-3 text-base uppercase text-white"><b>Доступ</b></div>
+                                <div class="flex select-none flex-wrap items-center">
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Публичный</span>
+                                    </div>
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Приватный</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="mb-1 flex items-center space-x-3 text-base uppercase text-white"><b>Valve Anti-Cheat</b></div>
+                                <div class="flex select-none flex-wrap items-center">
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Включен</span>
+                                    </div>
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Отключен</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="mb-1 flex items-center space-x-3 text-base uppercase text-white"><b>Valve Anti-Cheat</b></div>
+                                <div class="flex select-none flex-wrap items-center">
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Включен</span>
+                                    </div>
+                                    <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                        <span>Отключен</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="relative">
+                            <input type="text" placeholder="Поиск по названию" class="tpl-input w-full px-5 py-3 lg:mb-0">
+                        </div>
+                        <div class="overflow-x-auto w-full -mx-4 !w-auto">
+                            <table class="table noloading" id="serversTable">
+                                <thead>
+                                    <tr>
+                                        <th class="text-left" style="cursor:pointer" onclick="sortTable(0)">Название</th>
+                                        <th class="text-left" style="cursor:pointer" onclick="sortTable(1)">Подключение</th>
+                                        <th class="text-center" style="cursor:pointer" onclick="sortTable(2)">Онлайн</th>
+                                        <th class="text-center" style="cursor:pointer" onclick="sortTable(3)">Карта</th>
+                                        <th class="text-center" style="cursor:pointer" onclick="sortTable(4)">Версия</th>
+                                    </tr>
+                                </thead>
+                                @foreach (var server in Model.ServerEntityList)
+                                {
+                                    <tbody>
+                                        <tr id="@server.Id">
+                                            <td class="text-left" style="padding:2px">
+                                                <div class="flex max-w-sm items-center space-x-2">
+                                                    <img src="@server.Game.IconUrl" alt="@server.Game.GameName" title="@server.Game.GameName" class="size-8 rounded-md">
+                                                    <div class="flex items-center space-x-1 overflow-hidden">
+                                                        <a href="/Server/?id=@server.Id" class="truncate font-medium text-white hover:underline">@server.ServerName</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="text-left" style="padding:5px">
+                                                <div class="flex flex-shrink-0 flex-nowrap items-center justify-start space-x-1 text-white">
+                                                    <img alt="Россия" title="@server.Location" src="@Url.Content($"~/Icons/{server.Location}.png")">
+                                                    <div class="max-w-[150px] select-text truncate">@server.ServerIP:@server.GamePort</div>
+                                                    <i title="Копировать" class="uil uil-copy-alt cursor-pointer text-base hover:text-gray-400"></i>
+                                                    <button type="button" aria-label="Подключиться" title="Подключиться" class="text-green-500 hover:text-green-700 text-base">
+                                                        <i class="uil uil-play"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            @if (server.IsOnline == true)
+                                            {
+                                                <td class="text-center" style="padding:8px">
+                                                    <span class="text-center text-yellow-500">@server.ServerOnline</span>
+                                                </td>
+                                            }
+                                            else if (server.IsOnline == false)
+                                            {
+                                                <td class="text-center" style="padding:8px">
+                                                    <span class="text-center text-red-500">Offline</span>
+                                                </td>
+                                            }
+                                            <td class="max-w-[150px] truncate text-center" style="padding:8px">
+                                                <div>@server.ServerMap</div>
+                                            </td>
+                                            <td class="max-w-[150px] truncate text-center" style="padding:8px">
+                                                <div>@server.ServerVersion</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                }
+                            </table>
+
+                        </div>
+                        <button type="button" class="mx-auto w-full max-w-2xl relative btn">
+                            <span>Загрузить еще</span>
+                        </button>
+                    </div>
+                    <aside class="w-xs flex w-full min-w-0 flex-shrink-0 flex-col lg:ml-5 lg:max-w-xs">
+                        <button class="btn space-x-1 lg:hidden"><i class="uil uil-sliders-v-alt"></i> <span>Показать фильтры</span></button>
+                        <div class="tpl-block hidden flex-col lg:!flex">
+                            <div class="flex w-full flex-col" loading="true">
+                                <div class="flex flex-col">
+                                    <div class="mb-1 flex items-center space-x-3 text-base uppercase text-white"><b>Расположение</b></div>
+                                    <input type="text" placeholder="Поиск" class="tpl-input mb-2 flex w-full border px-4 py-2 text-sm text-white placeholder-gray-400 outline-none">
+                                    <div class="mb-4 flex flex-col">
+                                        <div class="flex select-none flex-wrap items-center">
+                                            <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                                <img src="https://cdn.gamemonitoring.ru/images/locations/CN.png" alt="Китай" class="mr-1">
+                                                <span>Китай</span>
+                                            </div>
+                                            <div class="mb-1 mr-1 flex h-8 cursor-pointer items-center truncate rounded-lg bg-bg-light px-3 text-xs text-white hover:bg-white/25 hover:text-white">
+                                                <img src="https://cdn.gamemonitoring.ru/images/locations/DE.png" alt="Германия" class="mr-1">
+                                                <span>Германия</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <select id="filter_map" name="map" class="input d-ib cursor-pointer items-center truncate rounded-lg px-3 text-xs text-white hover:bg-white/25 hover:text-white"  data-send-on-change="/servers/view" data-form="servers_filter" data-block="server_list">
+                            <option value="">Любая карта</option>
+                        </select>
+
+                        <select id="filter_version" name="version" class="input d-ib cursor-pointer items-center truncate rounded-lg px-3 text-xs text-white hover:bg-white/25 hover:text-white" data-send-on-change="/servers/view" data-form="servers_filter" data-block="server_list">
+                            <option value="">Любая версия</option>
+                        </select>
+
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+</div>
+
+<script>
+    let sortDirection = {}; 
+
+    function sortTable(columnIndex) {
+        const table = document.getElementById('serversTable');
+        const tbody = table.getElementsByTagName('tbody');
+        const rows = Array.from(tbody).flatMap(tbody => Array.from(tbody.getElementsByTagName('tr'))); // Получаем все строки из всех tbody
+
+        // Определяем текущее направление сортировки
+        const currentDirection = sortDirection[columnIndex] === 'asc' ? 'desc' : 'asc';
+        sortDirection[columnIndex] = currentDirection; 
+
+
+        rows.sort((a, b) => {
+            const aText = a.cells[columnIndex].textContent.trim();
+            const bText = b.cells[columnIndex].textContent.trim();
+
+            if (currentDirection === 'asc') {
+                return aText.localeCompare(bText); 
+            } else {
+                return bText.localeCompare(aText); 
+            }
+        });
+
+        rows.forEach(row => {
+            tbody[0].appendChild(row); 
+        });
+    }
+</script>
+
+
+
+

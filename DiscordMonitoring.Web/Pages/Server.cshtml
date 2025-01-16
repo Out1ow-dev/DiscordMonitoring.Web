@@ -1,0 +1,196 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.ServerModel
+@{
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/maincss.css" asp-append-version="true" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<div class="min-h-screen w-full flex-row-reverse">
+    <main class="flex min-h-full w-full flex-grow flex-col items-center justify-center">
+        <article itemscope="itemscope" itemtype="http://schema.org/Article" class="relative flex w-full flex-col space-y-2">
+            <div class="flex items-end justify-center bg-bg/50 lg:justify-between">
+                <div class="content_wrapper flex items-center justify-between px-2 py-3 lg:px-5">
+                    <div class="flex items-center truncate"><img src="@Model.Server.Game.IconUrl" itemprop="image" alt="@Model.Server.Game.GameName" title="DayZ" class="mr-1.5 size-10 rounded-md"> <div class="flex flex-col items-start -space-y-1"><b class="whitespace-pre-wrap text-center font-bold text-white lg:text-left lg:text-lg">DayZ</b> <nav data-v-7b4892c4="" aria-label="Breadcrumb" itemscope="itemscope" itemtype="https://schema.org/BreadcrumbList" class="flex w-full text-gray-500"><ol data-v-7b4892c4="" class="breadcrumb-list"><li data-v-7b4892c4="" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem" class="breadcrumb-item"><a data-v-7b4892c4="" href="/" class="text-xs hover:text-white nuxt-link-active" title="GAMEMONITORING" itemprop="item"><span data-v-7b4892c4="" itemprop="name">GAMEMONITORING</span></a> <meta data-v-7b4892c4="" itemprop="position" content="1"></li><li data-v-7b4892c4="" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem" class="breadcrumb-item"><a data-v-7b4892c4="" href="/dayz" class="text-xs hover:text-white nuxt-link-active" title="DayZ" itemprop="item"><span data-v-7b4892c4="" itemprop="name">DayZ</span></a> <meta data-v-7b4892c4="" itemprop="position" content="2"></li><li data-v-7b4892c4="" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem" class="breadcrumb-item"><a data-v-7b4892c4="" href="/dayz/servers" class="text-xs hover:text-white nuxt-link-active" title="Сервера" itemprop="item"><span data-v-7b4892c4="" itemprop="name">Сервера</span></a> <meta data-v-7b4892c4="" itemprop="position" content="3"></li></ol></nav></div></div> <div class="relative flex items-center justify-between">
+
+                    </div>
+                </div>
+            </div> 
+            <div class="content_wrapper relative flex w-full min-w-0 flex-1 flex-col items-start justify-start space-y-1 lg:space-y-2 lg:px-5">
+                <div class="relative flex w-full min-w-0 flex-1 flex-col items-start justify-start lg:flex-row">
+                    <div class="mb-2 flex w-full min-w-0 flex-1 flex-col space-y-1 overflow-hidden lg:mb-0 lg:space-y-2">
+                        <div class="tpl-block flex-col">
+                            <div class="mb-5 flex w-full flex-col space-y-2 lg:flex-row lg:space-x-5 lg:space-y-0">
+                                <div class="flex w-full flex-col">
+                                    <div class="mb-5 flex w-full flex-col space-y-3 lg:flex-row lg:space-x-4 lg:space-y-0">
+                                        <div class="flex w-full flex-col space-y-1">
+                                            <div class="flex items-end justify-between">
+                                                <b class="whitespace-nowrap text-xl text-white">Уровень 1</b>
+                                                <span class="whitespace-normal lg:whitespace-nowrap">Баллов: 123/500</span>
+                                            </div>
+                                            <div class="flex h-2 w-full rounded-full bg-bg-dark !h-3 w-full">
+                                                <div class="relative h-full w-0 rounded-full bg-gradient-to-r from-purple-600 to-indigo-700 transition-all duration-1000" style="width: 24.6%;"></div>
+                                            </div>
+                                        </div>
+                                        <a href="/dayz/servers/3590391/vote" class="btn">Проголосовать</a>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-5 text-center text-xl"><i class="uil uil-users-alt text-white"></i></div>
+                                            <span class="whitespace-normal text-sm lg:whitespace-nowrap">Игроков онлайн</span>
+                                        </div>
+                                        <div class="mx-2 w-full border-b border-dashed border-gray-600 pt-3"></div>
+                                        <span class="text-xs text-green-500">@Model.Server.ServerOnline</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-5 text-center text-xl"><i class="uil uil-robot text-white"></i></div>
+                                            <span class="whitespace-normal text-sm lg:whitespace-nowrap">Ботов</span>
+                                        </div>
+                                        <div class="mx-2 w-full border-b border-dashed border-gray-600 pt-3"></div>
+                                        <span class="select-text whitespace-normal text-xs text-white lg:whitespace-nowrap">0</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-5 text-center text-xl"><i class="uil uil-globe text-white"></i></div>
+                                            <span class="whitespace-normal text-sm lg:whitespace-nowrap">Расположение</span>
+                                        </div>
+                                        <div class="mx-2 w-full border-b border-dashed border-gray-600 pt-3"></div>
+                                        <img src="@Url.Content($"~/Icons/{Model.Server.Location}.png")" alt="@Model.Server.Location" class="mr-1">
+                                        <span class="select-text whitespace-normal text-xs text-white lg:whitespace-nowrap">@Model.Server.Location</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-5 text-center text-xl"><i class="uil uil-map text-white"></i></div>
+                                            <span class="whitespace-normal text-sm lg:whitespace-nowrap">Карта</span>
+                                        </div>
+                                        <div class="mx-2 w-full border-b border-dashed border-gray-600 pt-3"></div>
+                                        <span class="select-text whitespace-normal text-xs text-white lg:whitespace-nowrap">chernarusplus</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-5 text-center text-xl"><i class="uil uil-code-branch text-white"></i></div>
+                                            <span class="whitespace-normal text-sm lg:whitespace-nowrap">Версия</span>
+                                        </div>
+                                        <div class="mx-2 w-full border-b border-dashed border-gray-600 pt-3"></div>
+                                        <span class="select-text whitespace-normal text-xs text-white lg:whitespace-nowrap">1.26.159040</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-5 text-center text-xl"><i class="uil uil-shield-check text-white"></i></div>
+                                            <span class="whitespace-normal text-sm lg:whitespace-nowrap">Valve Anti-Cheat</span>
+                                        </div>
+                                        <div class="mx-2 w-full border-b border-dashed border-gray-600 pt-3"></div>
+                                        <span class="select-text whitespace-normal text-xs text-white lg:whitespace-nowrap">Включен</span>
+                                    </div>
+                                </div>
+                                <div class="flex w-full flex-col space-y-3 lg:max-w-md">
+                                    <div class="flex flex-col">
+                                        <div class="flex flex-col">
+                                            <span class="mb-1 text-base text-white">Game port:</span>
+                                            <div class="tpl-input flex items-center justify-between space-x-1 px-4 py-3 text-lg">
+                                                <span class="select-text whitespace-nowrap text-white">195.18.27.121:2302</span>
+                                                <div class="flex items-center">
+                                                    <i class="uil uil-copy cursor-pointer hover:text-gray-400"></i>
+                                                    <button type="button" aria-label="Подключиться" title="Подключиться" class="text-green-500 hover:text-green-700 text-lg"><i class="uil uil-play"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>                         
+                                        <div class="flex flex-col">
+                                            <span class="mb-1 text-base text-white">Query port:</span>
+                                            <div class="tpl-input flex items-center justify-between space-x-1 px-4 py-3 text-lg">
+                                                <span class="select-text whitespace-nowrap text-white">195.18.27.121:2303</span>
+                                                <div class="flex items-center">
+                                                    <i class="uil uil-copy cursor-pointer hover:text-gray-400"></i>
+                                                    <button type="button" aria-label="Подключиться" title="Подключиться" class="text-green-500 hover:text-green-700 text-lg"><i class="uil uil-play"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                  
+                                    <ul class="space-y-1 text-sm text-white">
+                                        <li class="flex space-x-1"><span class="text-indigo-500">1.</span><span>Скопируйте адрес подключения</span></li>
+                                        <li class="flex space-x-1"><span class="text-indigo-500">2.</span><span>Вставьте адрес подключения в поле ввода в игре</span></li>
+                                        <li class="flex space-x-1"><span class="text-indigo-500">3.</span><span>Нажмите кнопку "Подключиться"</span></li>
+                                    </ul>
+                                </div>
+                                <aside class="w-xs flex w-full min-w-0 flex-shrink-0 flex-col space-y-1 lg:ml-2 lg:max-w-xs lg:space-y-2">
+                                    <div class="tpl-block w-full space-y-4">
+                                        <div class="tpl-title">
+                                            <span>Контакты
+
+                                            </span>
+                                            <div class="!text-sm">
+                                                <a href="/ServerControl/ConfirmServer?id=@Model.Server.Id" class="whitespace-nowrap rounded-lg border border-bg-light px-3 py-2 text-xs text-gray-300 hover:bg-bg-light hover:text-white">Это мой сервер</a>
+                                                </div>
+                                            </div> 
+                                        <div class="flex items-center space-x-2">
+                                        <div class="relative flex min-w-0 flex-shrink-0 size-10">
+                                            <img src="https://cdn.gamemonitoring.ru/images/users/avatars/64/no.jpg" alt="no avatar" class="size-full rounded-full"> 
+                                         </div> 
+                                     <div class="flex w-full flex-col">
+                                         @if (@Model.Server.User != null)
+                                         {
+                                            <b class="tpl-title">@Model.Server.User.UserName</b>
+                                         }
+                                         else
+                                         {
+                                            <b class="tpl-title">Владелец Отсутствует</b>
+                                         }
+                                     </div>
+                                     </div>
+                                    </div>
+                                </aside>
+                            </div>
+                           
+                            <div class="tpl-block flex flex-col">
+                                <div class="content max-w-none text-sm text-gray-200 text-white">
+                                    <div class="w-full my-4">
+                                        @Html.Raw(Model.Server.ServerDescription)
+                                    </div>
+                                </div>
+
+                                <div class="w-full">
+                                    <canvas id="onlineLogChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+
+
+            </article>
+    </main>
+</div>
+
+<script>
+    var ctx = document.getElementById('onlineLogChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: @Html.Raw(Json.Serialize(ViewData["OnlineLogDates"])),
+            datasets: [{
+                label: 'Средний онлайн',
+                data: @Html.Raw(Json.Serialize(ViewData["OnlineLogAverageOnline"])),
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Максимальный онлайн',
+                data: @Html.Raw(Json.Serialize(ViewData["OnlineLogMaxOnline"])),
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+

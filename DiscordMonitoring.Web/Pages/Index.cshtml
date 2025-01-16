@@ -1,0 +1,67 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.IndexModel
+@{
+}
+
+
+<head>
+	<link rel="stylesheet" href="~/css/maincss.css" asp-append-version="true" />
+</head>
+<main itemscope="itemscope" itemtype="http://schema.org/WebPage" class="content_wrapper flex flex-col space-y-5 overflow-auto p-2 lg:p-5">
+    <section itemscope="itemscope" itemtype="http://schema.org/WebPageElement" class="mb-10 grid w-full grid-cols-1 gap-5 pt-10 text-center lg:grid-cols-2 lg:gap-10 lg:text-left" itemprop="mainContentOfPage">
+        <article itemprop="mainEntity" itemscope="itemscope" itemtype="http://schema.org/Article" class="flex flex-col">
+            <h1 itemprop="headline" class="text-gradient text-3xl font-bold uppercase text-white">GAMEMONITORING ― мониторинг и управление игровыми серверами</h1>
+            <p itemprop="description" class="mx-auto max-w-[80%] lg:mx-0">Следите за статусом ваших любимых игровых серверов, голосуйте, оставляйте отзывы. Получайте актуальные данные о состоянии серверов и активности игроков.</p>
+        </article>
+        <div itemprop="mainEntity" itemscope="itemscope" itemtype="http://schema.org/ItemList" class="grid w-full grid-cols-3 gap-4 lg:gap-6">
+            <div itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="flex w-full flex-col items-center">
+                <meta itemprop="position" content="1">
+                <b itemprop="name" class="text-2xl text-white xl:text-4xl">513&nbsp;340</b>
+                <span itemprop="description">Серверов</span>
+            </div>
+            <div itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="flex w-full flex-col items-center">
+                <meta itemprop="position" content="2">
+                <b itemprop="name" class="text-2xl text-white xl:text-4xl">266&nbsp;593</b>
+                <span itemprop="description">Серверов онлайн</span>
+            </div>
+            <div itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="flex w-full flex-col items-center">
+                <meta itemprop="position" content="3">
+                <b itemprop="name" class="text-2xl text-white xl:text-4xl">1&nbsp;587&nbsp;776</b>
+                <span itemprop="description">Игроков онлайн</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative mt-4 w-full">
+        <input type="text" placeholder="Поиск по названию игры" aria-label="Search games by name" >
+    </section>
+
+    <section data-v-79180430="" class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5" itemscope="itemscope" itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+        @foreach (var i in Model.GamesEntity)
+        {
+            <article data-v-79180430="" class="relative flex transform flex-col justify-between overflow-hidden rounded-xl bg-bg transition-transform duration-300 hover:scale-105">
+                <div data-v-79180430="" class="image-container" style="background-image: none;">
+                    <img data-v-79180430="" src="@i.ImageUrl" alt="@i.GameName" loading="lazy" class="w-full cursor-pointer object-cover">
+                </div>
+                <div data-v-79180430="" class="z-[2] p-3">
+                    <a data-v-79180430="" href="/Servers/?id=@i.Id" class="game-title truncate text-xl font-medium text-white">@i.GameName</a>
+                    <div data-v-79180430="" class="flex flex-col">
+                        <div data-v-79180430="" class="flex items-center justify-between">
+                            <span data-v-79180430="" class="text-white">Серверов</span>
+                            <b data-v-79180430="" class="font-bold text-white">@i.ServerCount</b>
+                        </div>
+                        <div data-v-79180430="" class="flex items-center justify-between">
+                            <span data-v-79180430="" class="text-white">Игроков на серверах</span>
+                            <b data-v-79180430="" class="font-bold text-white">@i.GeneralOnline</b>
+                        </div>
+                    </div>
+                </div>
+                <div data-v-79180430="" class="absolute inset-0 size-full blur-3xl" style="background: url(&quot;https://cdn.cloudflare.steamstatic.com/steam/apps/346110/header.jpg&quot;) center bottom / 100%; transform: scale(1, -1);"></div>
+            </article>
+        }   
+    </section>
+
+    <button class="bg-accent mx-auto mt-10 w-full max-w-xl rounded-lg py-3 text-white relative btn">
+        <span class="">Загрузить еще</span>
+    </button>
+</main>

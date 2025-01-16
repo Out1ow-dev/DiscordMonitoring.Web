@@ -1,0 +1,46 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.AdminPanel.GamesControl.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GameEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameEntity.GameName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameEntity.GameName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameEntity.ImageUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameEntity.ImageUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameEntity.ServerCount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameEntity.ServerCount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameEntity.GeneralOnline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameEntity.GeneralOnline)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="GameEntity.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./GamesList">Back to List</a>
+    </form>
+</div>

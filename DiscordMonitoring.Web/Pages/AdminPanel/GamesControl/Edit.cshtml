@@ -1,0 +1,60 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.AdminPanel.GamesControl.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>GameEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GameEntity.Id" />
+            <div class="form-group">
+                <label asp-for="GameEntity.GameName" class="control-label"></label>
+                <input asp-for="GameEntity.GameName" class="form-control" />
+                <span asp-validation-for="GameEntity.GameName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameEntity.ImageUrl" class="control-label"></label>
+                <input asp-for="GameEntity.ImageUrl" class="form-control" />
+                <span asp-validation-for="GameEntity.ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameEntity.IconUrl" class="control-label">Ссылка на картинку</label>
+                <input asp-for="GameEntity.IconUrl" class="form-control" />
+                <span asp-validation-for="GameEntity.IconUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameEntity.ServerCount" class="control-label"></label>
+                <input asp-for="GameEntity.ServerCount" class="form-control" />
+                <span asp-validation-for="GameEntity.ServerCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameEntity.GeneralOnline" class="control-label"></label>
+                <input asp-for="GameEntity.GeneralOnline" class="form-control" />
+                <span asp-validation-for="GameEntity.GeneralOnline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameEntity.GameSteamId" class="control-label">GameId</label>
+                <input asp-for="GameEntity.GameSteamId" class="form-control" />
+                <span asp-validation-for="GameEntity.GameSteamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./GamesList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

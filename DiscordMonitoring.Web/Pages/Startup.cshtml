@@ -1,0 +1,497 @@
+﻿@page
+@model StartupModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+        .owl-nav button {
+            background: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<section class="l-section wpb_row height_huge with_img">
+    <div class="l-section-img" role="img" data-img-width="1920" data-img-height="1080" style="background-image: url(https://pbs.twimg.com/media/FgeTK29XgAAWi9k?format=jpg&name=large);"></div>
+    <div class="l-section-overlay" style="background: linear-gradient(360deg, rgba(16, 16, 16, 0.6966796875), #1e1e1e)"></div>
+    <div class="l-section-h i-cf">
+        <div class="g-cols vc_row via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default">
+            <div class="wpb_column vc_column_container">
+                <div class="vc_column-inner">
+                    <div class="g-cols wpb_row via_grid cols_3-2 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:3rem;">
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner">
+                                <h1 class="w-text us_custom_104a75ad">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Game-monitoring.su – Удобный сервис мониторинга игровых серверов!</span>
+                                    </span>
+                                </h1>
+                                <div class="wpb_text_column us_custom_7e9d640b">
+                                    <div class="wpb_wrapper">
+                                        <p>Проект Game-monitoring.su предоставляет вам возможность разместить свой игровой сервер в мониториге с удобной интеграцией Discord бота. Ваши игроки всегда будут в курсе о состоянии и онлайне на вашем сервере!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpb_column vc_column_container hide_on_mobiles">
+                            <div class="vc_column-inner"></div>
+                        </div>
+                    </div>
+                    <div class="g-cols wpb_row us_custom_972c33a7 via_grid cols_1-5 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_middle type_default stacking_default" style="--gap:3rem;">
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner">
+                                <div class="w-btn-wrapper default_align_left laptops_align_left tablets_align_left mobiles_align_justify">
+                                    <a class="w-btn us-btn-style_1 us_custom_f73f4019 startbtn" href="#start">
+                                        <span class="w-btn-label">Добавить сервер</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>                      
+                        <div class="w-html">
+                            <div class="copy_promocode" style="display: none;">🎁 Промокод скопирован.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="l-section wpb_row height_medium" id="about">
+    <div class="l-section-overlay" style="background: linear-gradient(360deg, #101010, #101010)"></div>
+    <div class="l-section-h i-cf">
+        <div class="g-cols vc_row via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default">
+            <div class="wpb_column vc_column_container">
+                <div class="vc_column-inner">
+                    <div class="w-text us_custom_3ed67246">
+                        <span class="w-text-h">
+                            <span class="w-text-value">О проекте</span>
+                        </span>
+                    </div>
+                    <div class="g-cols wpb_row us_custom_c9b3c579 via_grid cols_3 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:1rem;">
+                        <div class="wpb_column vc_column_container us_custom_03971bae has_bg_color">
+                            <div class="vc_column-inner">
+                                <div class="w-iconbox us_custom_17e8b80a iconpos_left style_default color_custom align_left no_text">
+                                    <div class="w-iconbox-icon" style="font-size:20px; --icon-color:#fc4767;">
+                                        <i class="fad fa-map"></i>
+                                    </div>
+                                    <div class="w-iconbox-meta">
+                                        <div class="w-iconbox-title">Бесплатное использование</div>
+                                    </div>
+                                </div>
+                                <div class="wpb_text_column us_custom_0e614eeb has_text_color">
+                                    <div class="wpb_wrapper">
+                                        <p>Добавление своего сервера в мониторинг является абсолютно бесплатным.<br>Дополнительная плата взымается исключительно за интеграцию с Discord ботами.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpb_column vc_column_container us_custom_03971bae has_bg_color">
+                            <div class="vc_column-inner">
+                                <div class="w-iconbox us_custom_17e8b80a iconpos_left style_default color_custom align_left no_text">
+                                    <div class="w-iconbox-icon" style="font-size:20px; --icon-color:#fc4767;">
+                                        <i class="fad fa-users"></i>
+                                    </div>
+                                    <div class="w-iconbox-meta">
+                                        <div class="w-iconbox-title">Система фильтров</div>
+                                    </div>
+                                </div>
+                                <div class="wpb_text_column us_custom_0e614eeb has_text_color">
+                                    <div class="wpb_wrapper">
+                                        <p>Удобная система фильтров, которая позволит пользователю с точностью подобрать релевантный сервер.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpb_column vc_column_container us_custom_03971bae has_bg_color">
+                            <div class="vc_column-inner">
+                                <div class="w-iconbox us_custom_17e8b80a iconpos_left style_default color_custom align_left no_text">
+                                    <div class="w-iconbox-icon" style="font-size:20px; --icon-color:#fc4767;">
+                                        <i class="fad fa-drone-alt"></i>
+                                    </div>
+                                    <div class="w-iconbox-meta">
+                                        <div class="w-iconbox-title">Независимость выдачи</div>
+                                    </div>
+                                </div>
+                                <div class="wpb_text_column us_custom_0e614eeb has_text_color">
+                                    <div class="wpb_wrapper">
+                                        <p>У нас отсутствует платное поднятие или система голосов за сервер. Позиция Вашего сервера в выдаче каждый раз определяется случайным образом.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-grid us_custom_72fc42ef type_carousel layout_129 cols_2" id="us_grid_1" style="--gap:0.5rem;">
+                        <style>
+                            .layout_129 .w-grid-item-h {
+                            }
+
+                            .layout_129 .usg_post_image_1 {
+                                border-radius: 10px !important;
+                            }
+                        </style>
+                        <div class="w-grid-list owl-carousel valign_stretch dotstyle_circle navstyle_circle navpos_outside owl-responsive-1025 center_item with_arrows owl-loaded owl-drag" style="--transition-duration:350ms; --arrows-size:1.5rem;">
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage" style="transition: 0.25s cubic-bezier(0.78, 0.13, 0.15, 0.86); width: 5335px; transform: translate3d(-3152px, 0px, 0px;">
+                                    <div class="owl-item cloned" style="width: 485px;">
+                                        <article class="w-grid-item post-125 attachment type-attachment status-inherit hentry" data-id="125">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="456908"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="456908">
+                                                        <img decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 485px;">
+                                        <article class="w-grid-item post-124 attachment type-attachment status-inherit hentry" data-id="124">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="3489576"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="3489576">
+                                                        <img loading="lazy" decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 485px;">
+                                        <article class="w-grid-item post-123 attachment type-attachment status-inherit hentry" data-id="123">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="309458"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="309458">
+                                                        <img loading="lazy" decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item" style="width: 485px;">
+                                        <article class="w-grid-item post-127 attachment type-attachment status-inherit hentry" data-id="127">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="459068"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="459068">
+                                                        <img fetchpriority="high" decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item" style="width: 485px;">
+                                        <article class="w-grid-item post-126 attachment type-attachment status-inherit hentry" data-id="126">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="3409583"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="3409583">
+                                                        <img decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item" style="width: 485px;">
+                                        <article class="w-grid-item post-125 attachment type-attachment status-inherit hentry" data-id="125">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="456908"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="456908">
+                                                        <img decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item" style="width: 485px;">
+                                        <article class="w-grid-item post-124 attachment type-attachment status-inherit hentry" data-id="124">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="3489576"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="3489576">
+                                                        <img loading="lazy" decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item active center" style="width: 485px;">
+                                        <article class="w-grid-item post-123 attachment type-attachment status-inherit hentry" data-id="123">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="309458"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="309458">
+                                                        <img loading="lazy" decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item cloned active" style="width: 485px;">
+                                        <article class="w-grid-item post-127 attachment type-attachment status-inherit hentry" data-id="127">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="459068"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="459068">
+                                                        <img fetchpriority="high" decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 485px;">
+                                        <article class="w-grid-item post-126 attachment type-attachment status-inherit hentry" data-id="126">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="3409583"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="3409583">
+                                                        <img decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="owl-item cloned" style="width: 485px;">
+                                        <article class="w-grid-item post-125 attachment type-attachment status-inherit hentry" data-id="125">
+                                            <div class="w-grid-item-h">
+                                                <a ref="magnificPopupGrid" href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="w-grid-item-anchor" aria-label="456908"></a>
+                                                <div class="w-post-elm post_image usg_post_image_1 has_ratio">
+                                                    <a href="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" aria-label="456908">
+                                                        <img decoding="async" width="1024" height="576" src="https://thedayz.ru/uploads/posts/2024-12/dayz_wallpaper_calendar-3840x2160_12_2024.jpg" class="attachment-large size-large" alt="">
+                                                    </a>
+                                                    <div style="padding-bottom:56.25%"></div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-nav">
+                                <button class="owl-prev" aria-label="Назад"></button>
+                                <button class="owl-next" aria-label="Далее"></button>
+                            </div>
+                            <div class="owl-dots disabled"></div>
+                        </div>
+                        <div class="g-preloader type_1">
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class=" l-section wpb_row height_medium" style="background: linear-gradient(360deg, #101010, #101010)" id="start">
+    <div class="l-section-h i-cf">
+        <div class="g-cols vc_row via_grid cols_2-1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:1.5rem;">
+            <div class="wpb_column vc_column_container">
+                <div class="vc_column-inner">
+                    <div class="w-text us_custom_3ed67246">
+                        <span class="w-text-h">
+                            <span class="w-text-value">Использование сервиса</span>
+                        </span>
+                    </div>
+                    <div class="g-cols wpb_row us_custom_0f8f44b7 via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:1rem;">
+                        <div class="wpb_column vc_column_container us_custom_3bbab3c4 has_bg_color">
+                            <div class="vc_column-inner">
+                                <div class="w-text us_custom_adf3f52e">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Шаг 1</span>
+                                    </span>
+                                </div>
+                                <div class="w-text us_custom_f73f4019">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Зарегистрируйтесь и войдите в панель управления</span>
+                                    </span>
+                                </div>
+                                <div class="w-text us_custom_9ac6004a has_text_color">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Для регистрации потребуется подтверить свой почтовый ящик</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpb_column vc_column_container us_custom_3bbab3c4 has_bg_color">
+                            <div class="vc_column-inner">
+                                <div class="w-text us_custom_adf3f52e">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Шаг 2</span>
+                                    </span>
+                                </div>
+                                <div class="w-text us_custom_f73f4019">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Добавьте свой сервер в мониторинг, следуя инструкциям</span>
+                                    </span>
+                                </div>
+                                <div class="w-text us_custom_9ac6004a has_text_color">
+                                    <span class="w-text-h">
+                                        <span class="w-text-value">Для регистрации сервера потребуется подтвердить право на владение им</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="l-section wpb_row height_medium with_img parallax_ver">
+    <div class="l-section-img" role="img" data-img-width="1920" data-img-height="1080"
+         style="background-image: url('https://pbs.twimg.com/media/FgeTK29XgAAWi9k?format=jpg&name=large'); background-repeat: no-repeat; background-size: 150%; background-position: center;">
+    </div>
+
+    <div class="l-section-overlay" style="background: linear-gradient(360deg, #101010, rgba(16, 16, 16, 0.70));"></div>
+    <div class="l-section-h i-cf">
+        <div class="g-cols vc_row via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default">
+            <div class="wpb_column vc_column_container">
+                <div class="vc_column-inner">
+                    <div class="g-cols wpb_row us_custom_5a0f2da5 via_grid cols_1-2-1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:3rem;">
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner"></div>
+                        </div>
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner">
+                                <div class="w-image us_custom_50cc7d67 style_shadow-2 align_center">
+                                    <div class="w-image-h">
+                                        <div class="w-image-shadow" style="background-image:url(https://gamemonitoring.su/wp-content/uploads/shop_logo-200x30.png);"></div>
+                                        <img decoding="async" width="200" height="30"
+                                             src="https://gamemonitoring.su/wp-content/uploads/shop_logo-200x30.png"
+                                             class="attachment-us_200_200 size-us_200_200" alt="" loading="lazy"
+                                             srcset="https://gamemonitoring.su/wp-content/uploads/shop_logo-200x30.png 200w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-300x44.png 300w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-500x74.png 500w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-250x37.png 250w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-150x22.png 150w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-100x15.png 100w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-50x7.png 50w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-35x5.png 35w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-30x4.png 30w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-25x4.png 25w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-20x3.png 20w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo-15x2.png 15w,
+                                                     https://gamemonitoring.su/wp-content/uploads/shop_logo.png 535w"
+                                             sizes="auto, (max-width: 200px) 100vw, 200px">
+                                    </div>
+                                </div>
+                                <div class="wpb_text_column us_custom_c54721c1 has_text_color">
+                                    <div class="wpb_wrapper">
+                                        <p>
+                                            Мануал по использованию сервисом Вы можете найти в панели управления.<br>
+                                            Добавляй свой сервер прямо сейчас!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner"></div>
+                        </div>
+                    </div>
+                    <div class="w-btn-wrapper align_center">
+                        <a class="w-btn us-btn-style_1 us_custom_a8ce1987" href="https://shop.gamemonitoring.su/">
+                            <span class="w-btn-label">Перейти в панель управления</span>
+                        </a>
+                    </div>
+                    <div class="g-cols wpb_row us_custom_5a0f2da5 via_grid cols_1-2-1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:3rem;">
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner"></div>
+                        </div>
+                        <div class="wpb_column vc_column_container">
+                            <div class="vc_column-inner"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="l-section wpb_row height_large">
+    <div class="l-section-overlay" style="background: #101010;"></div>
+    <div class="l-section-h i-cf">
+        <div class="g-cols vc_row via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default">
+            <div class="wpb_column vc_column_container">
+                <div class="vc_column-inner">
+                    <div class="w-actionbox us_custom_b2117996 color_primary controls_right">
+                        <div class="w-actionbox-text">
+                            <h4 class="w-actionbox-title">Начните прямо сейчас!</h4>
+                            <div class="w-actionbox-description">
+                                <p>Сэкономьте время Ваших игроков на поиск сервера – разместите его на Game-monitoring.su</p>
+                            </div>
+                        </div>
+                        <div class="w-actionbox-controls">
+                            <a class="w-btn us-btn-style_1" href="https://gamemonitoring.su/#start" style="font-size:14px;">
+                                <span class="w-btn-label">Начать использовать</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function(){
+        var owl = $('.owl-carousel');
+
+        owl.owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+
+        // Обработчики событий для кнопок
+        $('.owl-prev').click(function() {
+            owl.trigger('prev.owl.carousel');
+        });
+
+        $('.owl-next').click(function() {
+            owl.trigger('next.owl.carousel');
+        });
+    });
+</script>
+
+

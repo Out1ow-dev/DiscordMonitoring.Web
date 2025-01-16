@@ -1,0 +1,88 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.ServerControl.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ServerEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.ServerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.ServerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.ServerDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.ServerDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.ServerOnline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.ServerOnline)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.ServerVersion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.ServerVersion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.ServerMap)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.ServerMap)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.ServerIP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.ServerIP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.QueryPort)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.QueryPort)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.GamePort)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.GamePort)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.CreateTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.CreateTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServerEntity.Game)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServerEntity.Game.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ServerEntity.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./ServerList">Вернуться назад</a>
+    </form>
+</div>

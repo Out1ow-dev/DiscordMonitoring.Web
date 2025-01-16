@@ -1,0 +1,89 @@
+﻿@page
+@model DiscordMonitoring.Web.Pages.ServerControl.ServerListModel
+
+@{
+    ViewData["Title"] = "ServerList";
+}
+
+<h1 style="padding: 40px;justify-content: center; display: flex">Список Ваших серверов</h1>
+
+<p>
+    <a asp-page="Create" class="w-btn us-btn-style_1 ush_btn_1">Добавить сервер</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].ServerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].ServerDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].ServerOnline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].ServerVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].ServerMap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].ServerIP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].QueryPort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].GamePort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServerEntity[0].CreateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ServerEntity) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerName)
+            </td>
+            <td style="max-width: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+                @Html.DisplayFor(modelItem => item.ServerDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerOnline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerMap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServerIP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueryPort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GamePort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateTime)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

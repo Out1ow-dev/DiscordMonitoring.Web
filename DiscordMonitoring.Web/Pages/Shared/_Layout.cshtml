@@ -1,0 +1,146 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DiscordMonitoring.Web</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="l-subheader at_middle">
+            <div class="l-subheader-h">
+                <div class="l-subheader-cell at_left">
+ 
+                </div>
+                <div class="w-hwrapper hidden_for_mobiles ush_hwrapper_1 align_none valign_top" style="transform: translateX(-500px);">
+                    <div class="w-text ush_text_1 header-nav-link nowrap"><a href="/" class="w-text-h"><span class="w-text-value">Главная</span></a></div>
+                    <div class="w-text ush_text_2 header-nav-link nowrap"><a href="#about" class="w-text-h"><span class="w-text-value">О проекте</span></a></div>
+                    <div class="w-text ush_text_3 header-nav-link nowrap"><a href="#start" class="w-text-h"><span class="w-text-value">Добавить сервер</span></a></div>
+                </div>
+
+
+                <div class="l-subheader-cell at_center"></div>
+                <div class="l-subheader-cell at_right"></div>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <a class="w-btn us-btn-style_1 hidden_for_mobiles ush_btn_1" asp-area="Identity" style="transform: translateX(-20px);" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                        <button type="submit" class="w-btn us-btn-style_1 hidden_for_mobiles ush_btn_1" style="transform: translateX(25px); transform: translateY(12px);">Logout</button>
+                    </form>
+
+                }
+                else
+                {
+                    <a class="w-btn us-btn-style_1 hidden_for_mobiles ush_btn_1" style="transform: translateX(-15px);" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    <a class="w-btn us-btn-style_1 hidden_for_mobiles ush_btn_1" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                }
+            </div>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+    <footer id="page-footer" class="l-footer" style="margin-top: 155px;" itemscope="" itemtype="https://schema.org/WPFooter">
+        <section class="l-section wpb_row height_small color_footer-bottom">
+            <div class="l-section-h i-cf">
+                <div class="g-cols vc_row via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default">
+                    <div class="wpb_column vc_column_container">
+                        <div class="vc_column-inner">
+                            <div class="g-cols wpb_row via_grid cols_3 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default" style="--gap:3rem;">
+                                <div class="wpb_column vc_column_container">
+                                    <div class="vc_column-inner">
+                                        <div class="w-image us_custom_cbc25651 align_none">
+                                            <a href="https://gamemonitoring.su" aria-label="main_logo" class="w-image-h"></a>
+                                        </div>
+                                        <div class="w-hwrapper valign_top default_align_none laptops_align_none tablets_align_none mobiles_align_center" style="--hwrapper-gap:0.5rem">
+                                            <div class="w-text us_custom_078191f8 has_text_color">
+                                                <span class="w-text-h"><span class="w-text-value">© 2023-2024</span></span>
+                                            </div>
+                                            <div class="w-text us_custom_02be3c6a link-special has_text_color">
+                                                <a href="https://gamemonitoring.su" class="w-text-h"><span class="w-text-value">gamemonitoring.su</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="w-text us_custom_23b0d3e5 has_text_color">
+                                            <span class="w-text-h"><span class="w-text-value">Все права защищены.</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container">
+                                    <div class="vc_column-inner">
+                                        <div class="w-text us_custom_b0b284ac has_text_color">
+                                            <span class="w-text-h"><span class="w-text-value">Навигация</span></span>
+                                        </div>
+                                        <div class="w-hwrapper valign_top stack_on_mobiles default_align_none laptops_align_none tablets_align_none mobiles_align_center" style="--hwrapper-gap:1.5rem">
+                                            <div class="w-vwrapper align_none valign_top" style="--vwrapper-gap:0rem">
+                                                <div class="w-text link-special"><a href="#about" class="w-text-h"><span class="w-text-value">О проекте</span></a></div>
+                                                <div class="w-text link-special"><a href="#start" class="w-text-h"><span class="w-text-value">Начать играть</span></a></div>
+                                            </div>
+                                            <div class="w-vwrapper align_none valign_top" style="--vwrapper-gap:0rem">
+                                                <div class="w-text link-special"><a href="https://shop.gamemonitoring.su" class="w-text-h"><span class="w-text-value">Магазин</span></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wpb_column vc_column_container">
+                                    <div class="vc_column-inner">
+                                        <div class="w-text us_custom_b0b284ac has_text_color">
+                                            <span class="w-text-h"><span class="w-text-value">Контакты</span></span>
+                                        </div>
+                                        <div class="w-text us_custom_32958168">
+                                            <a href="mailto:help@gamemonitoring.su" class="w-text-h"><span class="w-text-value">help@gamemonitoring.su</span></a>
+                                        </div>
+                                        <div class="w-text us_custom_23b0d3e5 has_text_color">
+                                            <span class="w-text-h"><span class="w-text-value">Поддержка в социальных сетях</span></span>
+                                        </div>
+                                        <div class="w-socials us_custom_eecd5a9b color_text shape_rounded style_solid hover_fade" style="--gap:0.3em;">
+                                            <div class="w-socials-list">
+                                                <div class="w-socials-item discord">
+                                                    <a target="_blank" href="https://discord.gg/gamemonitoring" class="w-socials-item-link" aria-label="Discord"><span class="w-socials-item-link-hover"></span><i class="fab fa-discord"></i></a>
+                                                </div>
+                                                <div class="w-socials-item telegram">
+                                                    <a target="_blank" href="https://t.me/gamemonitoring_support_bot" class="w-socials-item-link" aria-label="Telegram"><span class="w-socials-item-link-hover"></span><i class="fab fa-telegram"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="l-section wpb_row height_auto color_footer-top">
+            <div class="l-section-h i-cf">
+                <div class="g-cols vc_row via_grid cols_1 laptops-cols_inherit tablets-cols_inherit mobiles-cols_1 valign_top type_default stacking_default">
+                    <div class="wpb_column vc_column_container">
+                        <div class="vc_column-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/am1b5ow224sidv24i04gcsrepyus7zmtrfp9h2qxjju178so/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

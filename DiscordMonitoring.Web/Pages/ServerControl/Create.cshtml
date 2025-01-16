@@ -1,0 +1,46 @@
+﻿@page
+@model CreateModel
+
+@{
+    ViewData["Title"] = "CreateServer";
+}
+
+<h1 class="text-center" style="padding: 40px;justify-content: center; display: flex">Создание нового сервера</h1>
+
+
+<div class="default_align_center" style="justify-content: center; display: flex">
+    <div class="card" style="width: 400px; border: 3px solid #FF2F54; padding: 40px;">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>                   
+            <div class="form-group">
+                <label asp-for="ServerEntity.ServerIP" class="control-label">IP Адрес сервера</label>
+                <input asp-for="ServerEntity.ServerIP" class="form-control" style="border: 1px solid #FF2F54" />
+                <span asp-validation-for="ServerEntity.ServerIP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServerEntity.QueryPort" class="control-label">Query Порт </label>
+                <input asp-for="ServerEntity.QueryPort" class="form-control" style="border: 1px solid #FF2F54" />
+                <span asp-validation-for="ServerEntity.QueryPort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServerEntity.ServerDescription" class="control-label">Описание игрового сервера</label>
+                <textarea asp-for="ServerEntity.ServerDescription" class="form-control" style="border: 1px solid #FF2F54"></textarea>
+                <span asp-validation-for="ServerEntity.ServerDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать сервер" style="width: 185px; height: 45px; transform: translateY(12px);" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-3" style="justify-content: center; display: flex">
+    <a asp-page="Index">Вернуться назад</a>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
